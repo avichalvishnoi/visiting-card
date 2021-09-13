@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Visiting Card Generator</title>
+        <link rel="stylesheet" href="visitingstyle.css"> 
+
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+        
+      
+    </head>
+
+    <script src="visitingscript.js"></script>
+
+    <body class=" bg-info text-white">
+        <!--Header section Begins here--------------------------------------------------------------------------------------------->
+        <header>
+            
+            <h1 class="text-center bg-secondary text-white">Visiting Card Generator</h1>
+          
+        </header>
+        <!--Header section Ends here----------------------------------------------------------------------------------------------->
+
+        <!--Main Body content Begins Here----------It is divided into two parts form and photo ------------------------------------>
+        <div id="mainBody" class="row">
+            
+        <div class="col-xs-6">
+            <!--Form section under MainBody Begin-->
+            <div id="formSection" class="row text-center well" >
+                <form action="" id="getData" action="#">
+
+                    <label class="Question">   Enter Your Full Name Here    </label>     <br>
+                    <input type="text" placeholder="Your full Name" name="FullName"  class="answer" required >    <br><br>
+
+                    <label class="Question">   Enter Your Contact Number    </label>     <br>
+                    <input type="number" placeholder="Primary Contact No." name="Contact1"  class="answer" required>    <br>
+                    <input type="number" placeholder="Secondary Contact No." name="Contact2"  class="answer" >    <br><br>
+
+                    <label class="Question">   Enter Your Email-ID    </label>     <br>
+                    <input type="email" placeholder="Primary Email-ID" name="Email1" class="answer" required>    <br>
+                    <input type="email" placeholder="Secondary Email-ID" name="Email2"  class="answer" >    <br><br>
+
+                    <label class="Question">    Your Designation    </label>     <br>
+                    <input type="text" placeholder="Designation" name="Designation"  class="answer">    <br><br>
+
+                    <label class="Question">    Company Name    </label>     <br>
+                    <input type="text" placeholder="Name of the Company" name="Company"  class="answer">    <br><br>
+                    
+                    <label class="Question">   Enter Address Here    </label>           <br>
+                    <textarea class="answer" id="txt-ara" placeholder="Office Address"></textarea>    <br>
+                    <textarea class="answer" id="txt-ara" placeholder="Home Address"></textarea>    <br><br>
+
+                    <label class="Question">   Select colors    </label>           <br>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label style="color: aliceblue; font-size: 20px;">Color 1</label> <br>
+                            <select class="answer" id="color1" placeholder="--Select--">
+                                <option value="">--Select--</option>
+                                <option value="red">Red</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="blue">Blue</option>
+                                <option value="black">Black</option>
+                                <option value="pink">Pink</option>
+                                <option value="orange">Orange</option>
+                                <option value="violet">Violet</option>
+                                <option value="green">Green</option>
+                            </select>    <br>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <label style="color: aliceblue; font-size: 20px;">Color 2</label> <br>
+                            <select class="answer" id="color2" placeholder="--Select--">
+                                <option value="">--Select--</option>
+                                <option value="red">Red</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="blue">Blue</option>
+                                <option value="black">Black</option>
+                                <option value="pink">Pink</option>
+                                <option value="orange">Orange</option>
+                                <option value="violet">Violet</option>
+                                <option value="green">Green</option>
+                            </select>    <br>
+                        </div>
+                    </div>  <br>
+                    
+                    
+                </form>
+                <button class="btn btn-block btn-default btn-success " onclick="generateCard(this);"><em>Generate</em></button>   
+                             
+
+            </div>
+            <!--Form section uder MainBody Ends-->
+        </div>
+
+            <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+        <div class="col-xs-6">
+             <!--Photo section under MainBody Begin-->
+
+            <!--Photo section uder MainBody begins-->
+            <div id="photoSection" class="">
+
+                <center>      
+                    <div id="get-photo" class="row">
+                        <div id="image" class="col-xs-5"> 
+                            <img id="output" height="100%" width="100%">
+                        </div>  
+
+                        <div class="col-xs-4">
+                            <input type="file" accept="image/*" id="input-image" onchange="displayImage(event)">
+                        </div>
+
+                    </div><br><hr >
+
+                        <h2>Your Visiting Card will look like this</h2><hr>
+
+                        <canvas  id="card-body">
+                           
+                        </canvas>
+                    
+
+                </center>       
+            </div>
+            <!--Photo section uder MainBody Ends-->
+        </div>
+
+        </div>
+
+        <!--Main Body content Ends here-------------------------------------------------------------------------------------------->     
+        
+    </body>
+</html>
